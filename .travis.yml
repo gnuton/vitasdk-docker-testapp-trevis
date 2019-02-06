@@ -8,11 +8,13 @@ before_install:
   - docker ps -a
 
 script:
-  - cd /build
-  - ls
-  - cd app
-  - mkdir build
-  - cd build
-  - cat /proc/1/cgroup
-  - cmake -DCMAKE_BUILD_TYPE=Release ..
-  - make 
+  - docker run carlad/sinatra /bin/sh -c " \
+      cd /build;\
+      ls;\
+      cd app;\
+      mkdir build;\
+      cd build;\
+      cat /proc/1/cgroup;\
+      cmake -DCMAKE_BUILD_TYPE=Release ..;\
+      make \
+    "
