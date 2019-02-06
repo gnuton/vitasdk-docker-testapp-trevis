@@ -5,7 +5,7 @@ services:
 
 before_install:
   - docker run --name setup -v "${TRAVIS_BUILD_DIR}:/build/git" gnuton/vitasdk-docker /bin/bash -c " \
-      echo 'Here we install further dependencies';\
+      touch here_we_install_the_deps;\
     "
   - docker logs setup
   - docker commit setup buildimg 
