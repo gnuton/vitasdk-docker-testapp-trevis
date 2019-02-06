@@ -4,14 +4,14 @@ services:
   - docker
 
 before_install:
-  - docker run --name setup -v "${TRAVIS_BUILD_DIR}:/build/git" gnuton/vitasdk-docker /bin/sh -c " \
+  - docker run --name setup -v "${TRAVIS_BUILD_DIR}:/build/git" gnuton/vitasdk-docker /bin/bash -c " \
       echo 'Here we install further dependencies';\
     "
   - docker logs setup
   - docker commit setup buildimg 
 
 script:
-  - docker run --name build -v "${TRAVIS_BUILD_DIR}:/build/git" buildimg /bin/sh -c " \
+  - docker run --name build -v "${TRAVIS_BUILD_DIR}:/build/git" buildimg /bin/bash -c " \
       cd /build/git;\
       ls;\
       cd app;\
