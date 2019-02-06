@@ -8,7 +8,7 @@ before_install:
   - docker ps -a
 
 script:
-  - docker run carlad/sinatra /bin/sh -c " \
+  - docker run gnuton/vitasdk-docker /bin/sh -c " \
       cd /build;\
       ls;\
       cd app;\
