@@ -11,7 +11,7 @@ before_install:
 
 install:
   # install all of the dependencies you need here
-  - docker run --name setup -v "${TRAVIS_BUILD_DIR}:/build/git" gnuton/vitasdk-docker /bin/bash ${TRAVIS_BUILD_DIR}/scripts/travis/setup.sh
+  - docker run --name setup -v "${TRAVIS_BUILD_DIR}:/build/git" gnuton/vitasdk-docker /bin/bash /build/git/scripts/travis/setup.sh
   - docker logs setup
   - docker commit setup build_img 
 
@@ -21,5 +21,5 @@ before_script:
 
 script:
   # execute all of the commands which should make the build pass or fail
-  - docker run --name build -v "${TRAVIS_BUILD_DIR}:/build/git" build_img /bin/bash ${TRAVIS_BUILD_DIR}/scripts/travis/build.sh
+  - docker run --name build -v "${TRAVIS_BUILD_DIR}:/build/git" build_img /bin/bash /build/git/scripts/travis/build.sh
   - docker logs build
