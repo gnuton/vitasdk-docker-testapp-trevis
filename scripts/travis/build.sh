@@ -4,6 +4,5 @@ ls
 cd app
 mkdir build
 cd build
-cat /proc/1/cgroup
 cmake -DCMAKE_BUILD_TYPE=Release ..;
 make
