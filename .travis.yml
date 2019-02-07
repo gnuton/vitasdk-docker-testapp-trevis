@@ -1,24 +1,25 @@
 language: cpp
 
+sudo: false
+
 services:
   - docker
 
 before_install:
-  - docker run --name setup -v "${TRAVIS_BUILD_DIR}:/build/git" gnuton/vitasdk-docker /bin/bash -c "\
-    touch here_we_install_the_deps;\
-    "
+  # execute all of the commands which need to be executed 
+  # before installing dependencies
+
+install:
+  # install all of the dependencies you need here
+  - docker run --name setup -v "${TRAVIS_BUILD_DIR}:/build/git" gnuton/vitasdk-docker /bin/bash -c ${TRAVIS_BUILD_DIR}/scripts/setup.sh
   - docker logs setup
-  - docker commit setup buildimg 
+  - docker commit setup build_img 
+
+before_script:
+  # execute all of the commands which need to be executed 
+  # before running actual tests
 
 script:
-  - docker run --name build -v "${TRAVIS_BUILD_DIR}:/build/git" buildimg /bin/bash -c "\
-    cd /build/git;\
-    ls;\
-    cd app;\
-    mkdir build;\
-    cd build;\
-    cat /proc/1/cgroup;\
-    cmake -DCMAKE_BUILD_TYPE=Release ..;\
-    make\
-    "
+  # execute all of the commands which should make the build pass or fail
+  - docker run --name build -v "${TRAVIS_BUILD_DIR}:/build/git" build_img /bin/bash -c ${TRAVIS_BUILD_DIR}/scripts/build.sh
   - docker logs build
