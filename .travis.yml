@@ -4,21 +4,21 @@ services:
   - docker
 
 before_install:
-  - docker run --name setup -v "${TRAVIS_BUILD_DIR}:/build/git" gnuton/vitasdk-docker /bin/bash -c " \
-      touch here_we_install_the_deps;\
+  - docker run --name setup -v "${TRAVIS_BUILD_DIR}:/build/git" gnuton/vitasdk-docker /bin/bash -c "\
+    touch here_we_install_the_deps;\
     "
   - docker logs setup
   - docker commit setup buildimg 
 
 script:
-  - docker run --name build -v "${TRAVIS_BUILD_DIR}:/build/git" buildimg /bin/bash -c " \
-      cd /build/git;\
-      ls;\
-      cd app;\
-      mkdir build;\
-      cd build;\
-      cat /proc/1/cgroup;\
-      cmake -DCMAKE_BUILD_TYPE=Release ..;\
-      make \
+  - docker run --name build -v "${TRAVIS_BUILD_DIR}:/build/git" buildimg /bin/bash -c "\
+    cd /build/git;\
+    ls;\
+    cd app;\
+    mkdir build;\
+    cd build;\
+    cat /proc/1/cgroup;\
+    cmake -DCMAKE_BUILD_TYPE=Release ..;\
+    make\
     "
   - docker logs build
