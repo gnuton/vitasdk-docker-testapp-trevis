@@ -27,7 +27,7 @@ script:
 deploy:
   provider: releases
   api_key: "$GH_TOKEN"
-  file: "hello_cpp_world.vpk"
+  file: "/build/git/app/build/hello_cpp_world.vpk"
   skip_cleanup: true
   on:
     tags: false
