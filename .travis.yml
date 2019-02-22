@@ -23,13 +23,13 @@ script:
   # execute all of the commands which should make the build pass or fail
   - docker run --name build -v "${TRAVIS_BUILD_DIR}:/build/git" build_img /bin/bash /build/git/scripts/travis/build.sh
   - docker logs build
-  - ls /build/git/app/build
-  - ls /build/git/build
+  - ls
+  - ls app
   
 deploy:
   provider: releases
   api_key: "$GH_TOKEN"
-  file: "/build/git/app/build/hello_cpp_world.vpk"
+  file: "build/hello_cpp_world.vpk"
   skip_cleanup: true
   on:
     tags: true
