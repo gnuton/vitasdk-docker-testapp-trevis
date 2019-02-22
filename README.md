@@ -21,7 +21,7 @@ TravisCI can create releases when you tag commits.
 ## Setup releases
 The releases are managed by the deploy step in the travis file.
 The travis file for releases looks like this
-'''
+```
 deploy:
   provider: releases
   api_key: "$GH_TOKEN"
@@ -30,7 +30,6 @@ deploy:
   skip_cleanup: true
   on:
     tags: true
-
-'''
-Here the only thing you need to change is the hello_cpp_world.vpk with the name of your vpk/skprx or whatever file.
+```
+Here the only thing you need to change is the hello_cpp_world.vpk with the name of your vpk/skprx or whatever file.  
 To allow TravisCI to upload releases you must create a GH_TOKEN variable in the travisCI Buuild and fill it with the token you can get from your github.
