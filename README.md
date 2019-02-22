@@ -4,16 +4,16 @@
 If you are a vita developer and you are willing to setup CI (Continuos Integration) for your project you are in the right place.
 
 ### Features:  
-  ✔ VitaSDK is pre-installed in [docker](https://github.com/gnuton/vitasdk-docker) images for a quicker builds  
-  ✔ VitaSDK is updated to the latest nightly
-  ✔ TravisCI can run your unit tests
+  ✔ VitaSDK is pre-installed in [docker](https://github.com/gnuton/vitasdk-docker) images for quick and more reliable builds 
+  ✔ VitaSDK in the docker images are always updated to the latest nightly
+  ✔ TravisCI can run your unit tests (if any)
   ✔ No broken builds
-  ✔ You can tag releases which get builds and the VPK gets uploaded as release.
+  ✔ Build releases get easy like tagging your code
 
 ### Basic Setup
 1. Get a http://travis-ci.org account
 2. Copy the .travis.yaml file in your github project
-3. Edit the .travis.yaml and the script in scripts/travis/ if needed. You can most probably skip this step if you use CMake
+3. Edit the .travis.yaml and the scripts in scripts/travis/ if needed. You can most probably skip this step if you use CMake
 
 ## Releases
 TravisCI can create releases when you tag commits.
@@ -35,7 +35,7 @@ Here the only thing you need to change is the hello_cpp_world.vpk with the name 
 To allow TravisCI to upload releases you must create a GH_TOKEN variable in the travisCI Buuild and fill it with the token you can get from your github.
 
 ### Create releases
-Just tag your commit and push them to github.. TravisCI will take care of the rest.
+Just tag your commit and push it to github.. TravisCI will take care of the rest.
 ```
 git tag v1.0
 git push --tag
