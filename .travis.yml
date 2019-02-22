@@ -30,4 +30,4 @@ deploy:
   file: "/build/git/app/build/hello_cpp_world.vpk"
   skip_cleanup: true
   on:
-    tags: false
+    tags: true
