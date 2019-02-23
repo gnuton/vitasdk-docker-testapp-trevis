@@ -4,11 +4,11 @@
 If you are a vita developer and you are willing to setup CI (Continuos Integration) for your project you are in the right place.
 
 ### Features:  
-  ✔ VitaSDK is pre-installed in [docker](https://github.com/gnuton/vitasdk-docker) images for quick and more reliable builds 
-  ✔ VitaSDK in the docker images are always updated to the latest nightly
-  ✔ TravisCI can run your unit tests (if any)
-  ✔ No broken builds
-  ✔ Build releases get easy like tagging your code
+  ✔ VitaSDK is pre-installed in [docker](https://github.com/gnuton/vitasdk-docker) images for quick and more reliable builds   
+  ✔ VitaSDK in the docker images are always updated to the latest nightly  
+  ✔ TravisCI can run your unit tests (if any)  
+  ✔ No broken builds  
+  ✔ Build releases get easy like tagging your code  
 
 ### Basic Setup
 1. Get a http://travis-ci.org account
