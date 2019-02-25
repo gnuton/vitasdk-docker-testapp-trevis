@@ -34,7 +34,7 @@ deploy:
     tags: true
 ```
 Here the only thing you need to change is the hello_cpp_world.vpk with the name of your vpk/skprx or whatever file.  
-To allow TravisCI to upload releases you must create a GH_TOKEN variable in the travisCI Buuild and fill it with the token you can get from your github.
+To allow TravisCI to upload releases you must create a GH_TOKEN variable in the travisCI Buuild and fill it with the token you can get from your [github](https://github.com/settings/tokens).
 
 ### Create releases
 Just tag your commit and push it to github.. TravisCI will take care of the rest.
