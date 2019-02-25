@@ -35,6 +35,8 @@ script:
   
 deploy:
   provider: releases
+  # Get the token from https://github.com/settings/tokens with permissions(public_repo, repo_deployment)
+  # and create a GH_TOKEN var in https://travis-ci.org/YOUR_USERNAME/YOUR_PROJECTNAME/settings
   api_key: "$GH_TOKEN"
   file:
    -  "app/build/hello_cpp_world.vpk"
