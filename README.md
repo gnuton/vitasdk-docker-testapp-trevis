@@ -4,13 +4,13 @@
 If you are a vita developer and you are willing to setup CI (Continuos Integration) for your project you are in the right place.
 
 ### Features:
-  ✔ Travis builds all pull requests before merging them to the master line
-  ✔ Travis can build releases and push them to github
-  ✔ TravisCI can run your unit tests (if any)
-  ✔ Notifications on succesfull or unsucessfull builds [TODO]
-  ✔ Fast builds thanks to [docker](https://github.com/gnuton/vitasdk-docker) 
-  ✔ Builds against VitaSDK nightly snapshots
-  ✔ This template for CMake built code (kernel modules/apps)
+  ✔ Travis builds all pull requests before merging them to the master line  
+  ✔ Travis can build releases and push them to github  
+  ✔ TravisCI can run your unit tests (if any)  
+  ✔ Notifications on succesfull or unsucessfull builds [TODO]  
+  ✔ Fast builds thanks to [docker](https://github.com/gnuton/vitasdk-docker)   
+  ✔ Builds against VitaSDK nightly snapshots  
+  ✔ This template for CMake built code (kernel modules/apps)  
 
 ### Basic Setup
 1. Get a token from https://github.com/settings/tokens with permissions(public_repo, repo_deployment)
