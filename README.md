@@ -1,6 +1,6 @@
 [![Travis Build Status](https://travis-ci.org/gnuton/vitasdk-docker-testapp-trevis.svg?branch=master)](https://travis-ci.org/gnuton/vitasdk-docker-testapp-trevis)
 
-# CI Script for CPP Apps
+# Travis CI for PS Vita Apps
 If you are a vita developer and you are willing to setup CI (Continuos Integration) for your project you are in the right place.
 
 ### Features:
@@ -13,12 +13,13 @@ If you are a vita developer and you are willing to setup CI (Continuos Integrati
   ✔ This template for CMake built code (kernel modules/apps)
 
 ### Basic Setup
-1. Get a http://travis-ci.org account
-2. Copy the .travis.yaml file in your github project
-3. Edit the .travis.yaml and the scripts in scripts/travis/ if needed (most probably the source dir is not called 'app' for you).
-
-## Releases
-TravisCI can create releases when you tag commits.
+1. Get a token from https://github.com/settings/tokens with permissions(public_repo, repo_deployment)
+2. Copy .travis.yaml and script directory in your repository
+3. Update the copied files as needed (usually you need to replace 'app' with the dir which contains your source code)
+4. Log in https://travis-ci.org/ by pressing "sign-in with github" button
+5. Once logged, on the left side there is "My Repositories" > press +
+6. From the list of your repositories enable the your repository
+7. Then press settings and add GH_TOKEN variable to "Environment Variables" 
 
 ### Setup releases
 The releases are managed by the deploy step in the travis file.
@@ -34,7 +35,7 @@ deploy:
     tags: true
 ```
 Here the only thing you need to change is the hello_cpp_world.vpk with the name of your vpk/skprx or whatever file.  
-To allow TravisCI to upload releases you must create a GH_TOKEN variable in the travisCI Buuild and fill it with the token you can get from your [github](https://github.com/settings/tokens).
+To allow TravisCI to upload releases you must create a GH_TOKEN variable in the travisCI Buuild and fill it with the token you can get from your [github](https://github.com/settings/tokens) as described in the step 7 of basic setup.
 
 ### Create releases
 Just tag your commit and push it to github.. TravisCI will take care of the rest.
