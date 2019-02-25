@@ -3,17 +3,19 @@
 # CI Script for CPP Apps
 If you are a vita developer and you are willing to setup CI (Continuos Integration) for your project you are in the right place.
 
-### Features:  
-  ✔ VitaSDK is pre-installed in [docker](https://github.com/gnuton/vitasdk-docker) images for quick and more reliable builds   
-  ✔ VitaSDK in the docker images are always updated to the latest nightly  
-  ✔ TravisCI can run your unit tests (if any)  
-  ✔ No broken builds  
-  ✔ Build releases get easy like tagging your code  
+### Features:
+  ✔ Travis builds all pull requests before merging them to the master line
+  ✔ Travis can build releases and push them to github
+  ✔ TravisCI can run your unit tests (if any)
+  ✔ Notifications on succesfull or unsucessfull builds [TODO]
+  ✔ Fast builds thanks to [docker](https://github.com/gnuton/vitasdk-docker) 
+  ✔ Builds against VitaSDK nightly snapshots
+  ✔ This template for CMake built code (kernel modules/apps)
 
 ### Basic Setup
 1. Get a http://travis-ci.org account
 2. Copy the .travis.yaml file in your github project
-3. Edit the .travis.yaml and the scripts in scripts/travis/ if needed. You can most probably skip this step if you use CMake
+3. Edit the .travis.yaml and the scripts in scripts/travis/ if needed (most probably the source dir is not called 'app' for you).
 
 ## Releases
 TravisCI can create releases when you tag commits.
